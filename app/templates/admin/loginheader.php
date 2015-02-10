@@ -10,7 +10,7 @@
 	<?php
 		helpers\assets::css(array(
 			'//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
-			helpers\url::template_path() . 'css/style.css',
+			helpers\url::template_path() . 'css/login.css',
 		))
 	?>
 
@@ -18,6 +18,3 @@
 <body>
 
 <div class="container">
-
-	<h1><a href='<?php echo DIR;?>'><?php echo SITETITLE;?></a></h1>
-	<hr>

@@ -64,8 +64,11 @@ use \core\router,
     \helpers\url;
 
 //define routes
-Router::any('', '\controllers\welcome@index');
-Router::any('/subpage', '\controllers\welcome@subpage');
+Router::any('admin', '\controllers\admin\admin@index');
+Router::any('admin/login', '\controllers\admin\auth@login');
+Router::any('admin/logout', '\controllers\admin\auth@logout');
+
+Router::any('', '\controllers\blog@index');
 
 //if no route found
 Router::error('\core\error@index');
