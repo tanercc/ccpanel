@@ -14,6 +14,22 @@ if (!is_readable('app/core/config.php')) {
 
 /*
  *---------------------------------------------------------------
+ * TWIG
+ *---------------------------------------------------------------
+ */
+ 
+require_once 'app/Twig/Autoloader.php';
+Twig_Autoloader::register();
+
+//$loader = new Twig_Loader_Array(array(
+//    'index' => 'Hello {{ name }}!',
+//));
+//$twig = new Twig_Environment($loader);
+//
+//echo $twig->render('index', array('name' => 'Fabien'));
+
+/*
+ *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
  *
@@ -63,6 +79,8 @@ new \core\config();
 use \core\router,
     \helpers\url;
 
+helpers\TwigContainer::initTwig();	
+	
 //define routes
 Router::any('admin', '\controllers\admin\admin@index');
 Router::any('admin/login', '\controllers\admin\auth@login');
